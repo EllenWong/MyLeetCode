@@ -16,7 +16,7 @@ class Solution:
             #二叉搜索树中序遍历得到从小到大的元素
 
             dfs(root.right) #遍历右节点
-            if self.curnode == 0:return
+            # if self.curnode == 0:return
             self.curnode = self.curnode - 1 #更新当前访问的数值
             if self.curnode == 0: 
                 self.res = root.val
