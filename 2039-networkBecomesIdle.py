@@ -53,12 +53,12 @@ class Solution:
         dist = 1
         while queue: #BFS搜索
             for _ in range(len(queue)): #层序遍历，由第0个节点进行遍历
-                node = queue.popleft() 
+                node = queue.popleft()
                 for v in g[node]: #对每一层的各个元素的操作
                     if vis[v] : continue
                     vis[v] = True #记录已经遍历过的元素
                     queue.append(v) #节点入队
-                    ans = max(ans,dist*2+1 + (dist*2-1)//patience[v] *patience[v]) 
+                    ans = max(ans,dist*2+1 + (dist*2-1)//patience[v] *patience[v])
                     print(v,ans)
             dist = dist + 1
         return ans
