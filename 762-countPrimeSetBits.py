@@ -17,5 +17,6 @@ class Solution:
                 if n % i == 0 : return False
                 i += 1
             return True
-            
         return sum(isPrime(x.bit_count()) for x in range(left,right+1))
+x = 3
+print(x.bit_count())
