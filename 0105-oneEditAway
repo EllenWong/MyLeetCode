@@ -1,0 +1,11 @@
+class Solution:
+    def oneEditAway(self, first: str, second: str) -> bool:
+        if len(first) - len(second) > 1: return False
+        elif len(first) - len(second) < 0: return self.oneEditAway(second,first)
+        for i,(x,y) in enumerate(zip(first,second)):
+            if x != y:
+                if len(first) == len(second): return first[i+1:] == second[i+1:]
+                else: return first[i+1:]==second[i:]
+        return True
+
+# https://leetcode.cn/problems/one-away-lcci/
